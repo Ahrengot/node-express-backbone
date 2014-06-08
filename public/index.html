@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Backbone || Gulp || Express</title>
+		<link rel="stylesheet" href="styles/css/main.css">
+	</head>
+
+	<body>
+		<div id="movies" class="container-fluid">
+			<header class="page-header">
+				<h1>Favorite movies <small class="hidden-xs">Sorted by rating</small></h1>
+			</header>
+
+			<div class="row movie-list-header-bar">
+				<div class="col-xs-6 col-sm-8">Title <span class="hidden-xs">(Double-click to edit)</span></div>
+				<div class="col-xs-3 col-sm-2">Rating</div>
+				<div class="col-xs-3 col-sm-2 text-right">Delete?</div>
+			</div>
+
+			<ul class="movies list-unstyled">
+				<li><em>Loading movies &hellip;</em></li>
+			</ul>
+
+			<div class="panel panel-default add-movie-panel loading">
+				<div class="panel-heading">
+					<h2 class="h4">Add a new movie</h2>
+				</div>
+				<div class="panel-body">
+					<form id="add-movie">
+						<div class="row">
+							<div class="form-group col-xs-12 col-sm-6">
+								<label for="title">Title</label>
+								<input class="form-control" placeholder="E.g. 'Gravity'" name="title" required>
+							</div>
+							<div class="form-group col-xs-12 col-sm-6">
+								<label for="rating">Rating</label>
+								<input class="form-control" type="number" placeholder="0-5" min="0" max="5" name="rating">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-12 col-sm-3">
+								<button type="submit" class="btn btn-success btn-block btn-lg">Add movie</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/template" id="movie-tmpl">
+			<div class="row movie-data">
+				<div class="col-xs-6 col-sm-8"><%= title %></div>
+				<div class="col-xs-3 col-sm-2">
+					<% for (var i = 0; i < 5; i++) { %>
+					<span class="star"><%= ( rating > i ) ? "&#9733;" : "&#9734;"  %></span>
+					<% } %>
+				</div>
+				<div class="col-xs-3 col-sm-2">
+					<button type="button" class="close delete" aria-hidden="true">&times;</button>
+				</div>
+			</div>
+			<form>
+				<div class="row">
+					<div class="col-xs-6 col-sm-8">
+						<input class="form-control" value="<%= title %>" placeholder="E.g. 'Gravity'" name="title" required>
+					</div>
+					<div class="col-xs-3 col-sm-2">
+						<input class="form-control" value="<%= rating %>" type="number" placeholder="0-5" min="0" max="5" name="rating" required>
+					</div>
+					<div class="col-xs-3 col-sm-2">
+						<button class="done btn btn-success btn-block">Save</button>
+					</div>
+				</div>
+			</form>
+		</script>
+
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
+		<script src="bower_components/backbone/backbone.js"></script>
+
+		<script src="js/serialize-object.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

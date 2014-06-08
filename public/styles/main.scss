@@ -1,0 +1,64 @@
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+
+.movie {
+	margin-top: 0.7em;
+
+	form { display: none; }
+
+	.star {
+		@media (max-width: 470px) {
+			font-size: 11px;
+			letter-spacing: -5px;
+		}
+	}
+}
+
+.movies {
+	margin-bottom: 4.5em;
+}
+
+.movie.editing {
+	form { display: block; }
+	.movie-data { display: none; }
+}
+
+.movie-list-header-bar {
+	font-weight: bold;
+}
+
+.add-movie-panel {
+	transition: all 0.3s ease-in-out 0.5s;
+
+	&.loading {
+		opacity: 0;
+		transform: translateY(150px);
+	}
+}
+
+button.delete, .movie-data {
+	cursor: pointer;
+}
+
+button.delete {
+	color: $brand-danger;
+	opacity: 0.8;
+
+	&:hover {
+		opacity: 1;
+		color: $brand-danger;
+		text-decoration: none;
+	}
+}
+
+.delete:hover {
+	text-decoration: underline;
+}
+
+.container-fluid {
+	max-width: 830px;
+	margin: auto;
+}
+
+.panel-heading h2 {
+	margin: 0;
+}

@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "Backbone + Gulp + Express",
+  "authors": [
+    "Jens Ahrengot Boddum <ahrengot@gmail.com>"
+  ],
+  "description": "Backbone app with express REST API built with Gulp",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.1.1+2",
+    "backbone": "~1.1.2",
+    "jquery": "~2.1.1"
+  }
+}
