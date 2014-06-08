@@ -1,4 +1,3 @@
-# Favorite movies app
 ![Favorite movies app](http://cl.ly/image/2I463u2q3t19/favorite-movies.png)
 
 ## What is this?
